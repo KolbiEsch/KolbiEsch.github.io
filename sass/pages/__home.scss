@@ -1,0 +1,274 @@
+section {
+    scroll-margin-top: calc(76px + 2em);
+}
+
+.header {
+    grid-column: full-start / full-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    padding: 0 3rem;
+    
+}
+
+.about {
+    grid-column: full-start / full-end;
+    text-align: center;
+    margin-top: 4rem;
+    
+
+    &__paragraph {
+        width: 50%;
+        margin: 0 auto;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 70%;
+        }
+    }
+
+    &__skills {
+        display: grid;
+        grid-template-columns: repeat(4, min-content);
+        grid-template-rows: repeat(4, min-content);
+        gap: 2rem;
+        justify-content: center;
+        padding: 5rem 2.5rem;
+    }
+
+    &__svg-container {
+        background: 
+        linear-gradient($bg-light, $bg-light) padding-box,
+        linear-gradient(to right, $color-primary, $color-secondary) border-box;
+        border-radius: 25px;
+        border: 3px solid transparent;
+        padding: 2rem;
+        display: inline-block;
+
+        &--html {
+            grid-column: 2 / 3;
+        }
+
+        &--css {
+
+        }
+
+        &--mysql {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+        }
+
+        &--net {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+        }
+
+        &--sass {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+
+        &--csharp {
+            grid-column: 2 / 3;
+        }
+
+        &--react {
+
+        }
+
+        &--js {
+            grid-column: 2 / 3;
+        }
+    }
+
+    &__skill-svg {
+        height: 7rem;
+        width: 7rem;
+    }
+}
+
+.projects {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: [full-start] 8rem [center-start] repeat(8, [col-start] 1fr [col-end]) [center-end] 8rem  [full-end];
+    text-align: center;
+    margin-bottom: 8rem;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: full-start / full-end;
+    }
+
+    &__heading {
+        width: 100%;
+        grid-column: full-start / full-end;
+    }
+
+    &__grid {
+        grid-column: full-start / col-end 7;
+        background-color: $bg-light;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(8, 5vw);
+        align-items: center;
+    }
+
+    .project {
+
+        &__img {
+            grid-row: 2 / 8;
+            grid-column: 1 / 8;
+            width: 100%;
+        }
+
+        &__description-box--left {
+            grid-row: 3 / 7;
+            grid-column: 8 / 10;
+            width: 170%;
+            margin-left: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media only screen and (max-width: $bp-smallest) {
+                width: 200%;
+                margin-left: 1.5rem;
+            }
+
+            :not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.contact {
+    
+    grid-column: center-start / center-end;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 8rem;
+    
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 50rem;
+
+        :not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__email {
+        display: block;
+        background-color: $bg-light;
+        outline: none;
+        border: none;
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+        font-family: "Raleway", sans-serif;
+        color: $color-white;
+        width: 100%;
+
+        &::placeholder {
+            color: $color-white;
+        }
+    }
+
+    &__message {
+        display: block;
+        background-color: $bg-light;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 1.5rem 1rem;
+        color: $color-white;
+        font-family: "Raleway", sans-serif;
+        resize: none;
+        width: 100%;
+        transition: height .5s;
+
+        &::placeholder {
+            color: $color-white;
+        }
+    }
+}
+
+.footer {
+    
+    grid-column: full-start / full-end;
+    background-color: $bg-light;
+    padding: 4.5rem 1.5rem;
+    text-align: center;
+
+    &__icon-box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    &__icon-link {
+        padding: 1rem 1rem;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        width: fit-content;
+        outline: none;
+        border: none;
+
+        &:hover .footer__svg {
+            fill: $color-primary;
+        }
+    }
+
+    &__svg {
+        fill: $color-tertiary;
+        width: 4rem;
+        height: 4rem;
+        transition: all .25s;
+    }
+}
+
+.navbar {
+    position: sticky;
+    grid-column: full-start / full-end;
+    top: 0;
+    padding: 2.5rem 4rem;
+    background-color: rgba($bg-light, 0.9);
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    
+    
+    &__list {
+        display: flex;
+        justify-content: end;
+
+        @media only screen and (max-width: $bp-large) {
+            justify-content: center;
+        }
+
+        & :not(:last-child) {
+            margin-right: 4rem;
+        }
+    }
+
+    &__list-item {
+        display: inline-block;
+        list-style: none;
+    }
+
+    &__link {
+        color: inherit;
+        transition: all .2s;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        &:hover {
+            color: $color-primary;
+            
+        }
+    }
+}

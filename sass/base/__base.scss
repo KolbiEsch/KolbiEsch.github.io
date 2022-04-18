@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+    @media only screen and (min-width: $bp-largest) {
+        font-size: 75%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 55%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        font-size: 45%;
+    }
+
+    @media only screen and (max-width: $bp-exsmall) {
+        font-size: 37.5%;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        font-size: 33%;
+    }
+    
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    background-color: $bg-dark;
+    color: $color-white;
+    line-height: 1.6;
+    
+}
+
+.container {
+    display: grid;
+
+    grid-template-rows: 100vh repeat(6, min-content);
+    grid-auto-rows: max-content;
+    grid-template-columns: [full-start] 8rem [center-start] repeat(8, [col-start] 1fr [col-end]) [center-end] 8rem  [full-end];
+}

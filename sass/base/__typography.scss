@@ -1,0 +1,46 @@
+.heading-1 {
+    font-weight: 300;
+    font-size: 6.5rem;
+
+    &--animated {
+        animation: moveInLeft .8s ease-out;
+    }
+}
+
+.heading-2 {
+    font-weight: 300;
+    font-size: 6.5rem;
+
+    &--animated {
+        animation: moveInRight .8s ease-out;
+    }
+}
+
+.heading-3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 4.5rem;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+
+    &::after {
+        content: "";
+        height: 50%;
+        width: 100%;
+        background-color: $color-primary;
+        position: absolute;
+        top: 70%;
+        left: 30%;
+        z-index: -10;
+    }
+}
+
+.heading-4 {
+    font-size: 2.5rem;
+}
+
+.name {
+    color: $color-primary;
+    transition: all 1s;
+}

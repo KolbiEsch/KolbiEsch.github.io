@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: $color-white;
+    padding: 1rem 1.5rem;
+    line-height: 1;
+    position: relative;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 1px;
+    background-color: $color-primary;
+    display: block;
+    transition: all 0.25s;
+    z-index: -1;
+}
+
+.link:hover::after {
+    height: 100%;
+}
+
+button.link {
+    background: none;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    align-self: end;
+    cursor: pointer;
+}

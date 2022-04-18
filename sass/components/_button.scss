@@ -1,0 +1,32 @@
+.btn {
+    background-color: transparent;
+    border-radius: 100px;
+    border: 3px solid $color-primary;
+    padding: 2.2rem 6rem;
+    color: $color-white;
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+    transition: all 1s;
+    cursor: pointer;
+    position: relative;
+    animation: fadeInBottom 1s;
+
+    &:hover {
+        border: 3px solid $color-secondary;
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100px;
+    }
+
+    &:hover::after {
+        animation: pulse 1s;
+    }
+}
+
